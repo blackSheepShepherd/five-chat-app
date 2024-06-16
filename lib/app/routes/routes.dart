@@ -3,13 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 final GoRouter goRouter = GoRouter(
-  initialLocation: LoginView.routePath,
+  initialLocation: LoginPage.routePath,
   routes: <RouteBase>[_loginRoute],
 );
 
 final _loginRoute = GoRoute(
-  path: LoginView.routePath,
-  builder: (BuildContext context, GoRouterState state) {
-    return const LoginView();
-  },
+  path: LoginPage.routePath,
+  builder: (BuildContext context, GoRouterState state) => const LoginPage(),
 );

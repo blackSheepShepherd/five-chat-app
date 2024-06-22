@@ -1,4 +1,5 @@
 {
   "@@locale": "en",
-  "loginHello": "Hey!"
+  "loginHello": "Hey!",
+  "loginDescription": "We`re glad that you take dating serious. How do you wanna login?"
 }

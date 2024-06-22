@@ -1,4 +1,5 @@
 import 'package:five_chat_app/app/routes/routes.dart';
+import 'package:five_chat_app/app/theme/global_theme.dart';
 import 'package:five_chat_app/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 
@@ -11,6 +12,8 @@ class App extends StatelessWidget {
       routerConfig: goRouter,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
+      theme: GlobalThemData.lightThemeData,
+      darkTheme: GlobalThemData.darkThemeData,
     );
   }
 }

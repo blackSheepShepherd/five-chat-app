@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:five_chat_app/l10n/l10n.dart';
 import 'package:five_chat_app/login/cubit/login_cubit.dart';
 import 'package:flutter/material.dart';
@@ -24,12 +25,17 @@ class LoginView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<LoginCubit, LoginState>(
       builder: (context, state) {
-        return const Scaffold(
-          body: SafeArea(
-            child: Column(
-              children: [
-                _AnimatedTitle(),
-              ],
+        final theme = Theme.of(context);
+        return Scaffold(
+          backgroundColor: theme.canvasColor,
+          body: const SafeArea(
+            child: Padding(
+              padding: EdgeInsets.symmetric(vertical: 35, horizontal: 20),
+              child: Column(
+                children: [
+                  _AnimatedTitle(),
+                ],
+              ),
             ),
           ),
         );
@@ -43,6 +49,30 @@ class _AnimatedTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(context.l10n.loginHello);
+    return AnimatedTextKit(
+      isRepeatingAnimation: false,
+      animatedTexts: [
+        TyperAnimatedText(
+          context.l10n.loginHello,
+          textStyle: const TextStyle(
+            fontWeight: FontWeight.w600,
+            fontSize: 40,
+          ),
+          speed: const Duration(
+            milliseconds: 200,
+          ),
+        ),
+        TyperAnimatedText(
+          context.l10n.loginDescription,
+          textStyle: const TextStyle(
+            fontWeight: FontWeight.w600,
+            fontSize: 35,
+          ),
+          speed: const Duration(
+            milliseconds: 100,
+          ),
+        ),
+      ],
+    );
   }
 }

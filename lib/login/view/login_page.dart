@@ -1,3 +1,4 @@
+import 'package:five_chat_app/l10n/l10n.dart';
 import 'package:five_chat_app/login/cubit/login_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -24,10 +25,12 @@ class LoginView extends StatelessWidget {
     return BlocBuilder<LoginCubit, LoginState>(
       builder: (context, state) {
         return const Scaffold(
-          body: Column(
-            children: [
-              _AnimatedTitle(),
-            ],
+          body: SafeArea(
+            child: Column(
+              children: [
+                _AnimatedTitle(),
+              ],
+            ),
           ),
         );
       },
@@ -40,6 +43,6 @@ class _AnimatedTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Text(context.l10n.loginHello);
   }
 }

@@ -1,5 +1,8 @@
 {
   "@@locale": "de",
   "loginHello": "Hey!",
-  "loginDescription": "Wir freuen uns, dass du Dating ernst nimmst. Wie willst du dich einloggen?"
+  "loginDescription": "Wir freuen uns, dass du Dating ernst nimmst. Wie willst du dich anmelden?",
+  "loginWithGoogle": "Anmelden mit Google",
+  "loginWithApple": "Anmelden mit Apple",
+  "loginWithEmail": "Anmelden mit Email"
 }

@@ -1,7 +1,5 @@
 {
-    "@@locale": "en",
-    "counterAppBarTitle": "Counter",
-    "@counterAppBarTitle": {
-        "description": "Text shown in the AppBar of the Counter Page"
-    }
+  "@@locale": "en",
+  "loginDescription": "Hey! Welcome to 5 Chat 🥰 Please enter your mail and your password or a new password.",
+  "loginButtonText": "Join"
 }

@@ -1,7 +1,10 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:five_chat_app/app/theme/app_styling.dart';
 import 'package:five_chat_app/l10n/l10n.dart';
 import 'package:five_chat_app/login/cubit/login_cubit.dart';
+import 'package:five_chat_app/login/helper/input_validators.dart';
 import 'package:five_chat_app/login/widgets/delayed_display.dart';
+import 'package:five_chat_app/login/widgets/text_input.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -45,9 +48,14 @@ class _LoginViewState extends State<LoginView> {
                   DelayedDisplay(
                     delay: const Duration(seconds: 8),
                     child: SlideTransitionArea(
-                      child: _LoginWithButton(
-                        title: l10n.loginWithGoogle,
-                        onTap: () => null,
+                      child: CustomTextInput(
+                        inputFormatter: ValidatorInputFormatter(
+                          editingValidator: EmailEditingRegexValidator(),
+                        ),
+                        onChanged: (String value) => print(value),
+                        keyboardType: TextInputType.emailAddress,
+                        hintText: 'you@example.com',
+                        prefixIcon: const Icon(Icons.mail),
                       ),
                     ),
                   ),
@@ -55,18 +63,24 @@ class _LoginViewState extends State<LoginView> {
                   DelayedDisplay(
                     delay: const Duration(milliseconds: 8500),
                     child: SlideTransitionArea(
-                      child: _LoginWithButton(
-                        title: l10n.loginWithApple,
-                        onTap: () => null,
+                      child: CustomTextInput(
+                        onChanged: (String value) => print(value),
+                        keyboardType: TextInputType.emailAddress,
+                        hintText: '123456',
+                        prefixIcon: const Icon(Icons.lock),
+                        obscureText: true,
+                        inputFormatter: ValidatorInputFormatter(
+                          editingValidator: NoSpaceRegexValidator(),
+                        ),
                       ),
                     ),
                   ),
-                  const SizedBox(height: 25),
+                  const SizedBox(height: 70),
                   DelayedDisplay(
                     delay: const Duration(seconds: 9),
                     child: SlideTransitionArea(
                       child: _LoginWithButton(
-                        title: l10n.loginWithEmail,
+                        title: l10n.loginButtonText,
                         onTap: () => null,
                       ),
                     ),
@@ -93,23 +107,13 @@ class _AnimatedTitle extends StatelessWidget {
         isRepeatingAnimation: false,
         animatedTexts: [
           TyperAnimatedText(
-            l10n.loginHello,
-            textStyle: const TextStyle(
-              fontWeight: FontWeight.w600,
-              fontSize: 50,
-            ),
-            speed: const Duration(
-              milliseconds: 300,
-            ),
-          ),
-          TyperAnimatedText(
             l10n.loginDescription,
             textStyle: const TextStyle(
               fontWeight: FontWeight.w600,
-              fontSize: 35,
+              fontSize: 30,
             ),
             speed: const Duration(
-              milliseconds: 85,
+              milliseconds: 70,
             ),
           ),
         ],
@@ -177,9 +181,7 @@ class _LoginWithButton extends StatelessWidget {
       height: 65,
       width: 350,
       decoration: BoxDecoration(
-        borderRadius: const BorderRadius.all(
-          Radius.circular(16),
-        ),
+        borderRadius: AppStyling.borderRadiusM,
         boxShadow: [
           BoxShadow(
             color: theme.colorScheme.primary.withAlpha(200),
@@ -202,7 +204,7 @@ class _LoginWithButton extends StatelessWidget {
               WidgetStateProperty.all<Color>(theme.colorScheme.onSurface),
           shape: WidgetStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: AppStyling.borderRadiusM,
               side: BorderSide(
                 color: theme.colorScheme.onSurface,
                 width: 2,

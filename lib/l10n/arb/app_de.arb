@@ -1,8 +1,5 @@
 {
   "@@locale": "de",
-  "loginHello": "Hey!",
-  "loginDescription": "Wir freuen uns, dass du Dating ernst nimmst. Wie willst du dich anmelden?",
-  "loginWithGoogle": "Anmelden mit Google",
-  "loginWithApple": "Anmelden mit Apple",
-  "loginWithEmail": "Anmelden mit Email"
+  "loginDescription": "Hey! Willkommen bei 5 Chat 🥰 Bitte gebe deine Mail und dein bereits verwendetes bzw. neues Passwort an.",
+  "loginButtonText": "Anmelden"
 }

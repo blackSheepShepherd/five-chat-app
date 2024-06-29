@@ -10,13 +10,13 @@ class GlobalThemData {
 
   static ThemeData themeData(ColorScheme colorScheme, Color focusColor) {
     return ThemeData(
-      colorScheme: colorScheme,
-      canvasColor: colorScheme.surface,
-      scaffoldBackgroundColor: colorScheme.surface,
-      highlightColor: Colors.transparent,
-      focusColor: focusColor,
-      fontFamily: 'Nunito',
-    );
+        colorScheme: colorScheme,
+        canvasColor: colorScheme.surface,
+        scaffoldBackgroundColor: colorScheme.surface,
+        highlightColor: Colors.transparent,
+        focusColor: focusColor,
+        fontFamily: 'Nunito',
+        extensions: []);
   }
 
   static const ColorScheme lightColorScheme = ColorScheme(

@@ -29,8 +29,6 @@ class EmailEditingRegexValidator extends RegexValidator {
   EmailEditingRegexValidator()
       : super(
           regexSource:
-              // TODO(Clemens): What does this regex achieve? How does it work?
-              // Can you please provide examples (and maybe a source).
               r'^[a-zA-Z0-9_.+-]*(@([a-zA-Z0-9-]*(\.[a-zA-Z0-9-]*)?)?)?$',
         );
 }
@@ -49,7 +47,8 @@ class CodeEditingValidator extends RegexValidator {
         );
 }
 
-//Minimum eight characters, at least one uppercase letter, one lowercase letter and one number
+//Minimum eight characters, at least one uppercase letter, one lowercase letter
+//and one number
 class PasswordRegexSubmitValidator extends RegexValidator {
   PasswordRegexSubmitValidator()
       : super(regexSource: r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$');

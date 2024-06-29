@@ -52,7 +52,7 @@ class _LoginViewState extends State<LoginView> {
                         inputFormatter: ValidatorInputFormatter(
                           editingValidator: EmailEditingRegexValidator(),
                         ),
-                        onChanged: (String value) => print(value),
+                        onChanged: print,
                         keyboardType: TextInputType.emailAddress,
                         hintText: 'you@example.com',
                         prefixIcon: const Icon(Icons.mail),
@@ -64,7 +64,7 @@ class _LoginViewState extends State<LoginView> {
                     delay: const Duration(milliseconds: 8500),
                     child: SlideTransitionArea(
                       child: CustomTextInput(
-                        onChanged: (String value) => print(value),
+                        onChanged: print,
                         keyboardType: TextInputType.emailAddress,
                         hintText: '123456',
                         prefixIcon: const Icon(Icons.lock),
@@ -81,7 +81,7 @@ class _LoginViewState extends State<LoginView> {
                     child: SlideTransitionArea(
                       child: _LoginWithButton(
                         title: l10n.loginButtonText,
-                        onTap: () => null,
+                        onTap: () {},
                       ),
                     ),
                   ),

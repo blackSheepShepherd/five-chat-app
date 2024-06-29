@@ -16,7 +16,7 @@ class GlobalThemData {
         highlightColor: Colors.transparent,
         focusColor: focusColor,
         fontFamily: 'Nunito',
-        extensions: []);
+        extensions: const [],);
   }
 
   static const ColorScheme lightColorScheme = ColorScheme(
